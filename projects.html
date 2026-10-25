@@ -262,17 +262,26 @@
   .proj-caption { padding: 12px 2px 0; display: flex; flex-direction: column; gap: 3px; }
   .proj-caption strong { font-family: 'Poppins', sans-serif; font-size: 0.98rem; color: var(--ink); }
   .proj-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); }
+  .proj-grid { align-items: start; }
   .proj-photo {
     position: relative;
-    aspect-ratio: 4 / 3;
+    display: block; width: 100%; padding: 0;
     border-radius: 8px;
     overflow: hidden;
     background: #fff;
     border: 1px solid var(--border-dark);
-    background-size: cover;
-    background-position: center;
+    cursor: zoom-in;
     transition: transform 0.25s, box-shadow 0.25s;
   }
+  .proj-photo img { display: block; width: 100%; height: auto; }
+  .lightbox { position: fixed; inset: 0; z-index: 2000; background: rgba(20,19,18,0.92); display: none;
+    align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 24px; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: calc(100vh - 110px); border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-cap { color: #FCFAF5; font-family: 'Poppins', sans-serif; font-weight: 600; text-align: center; }
+  .lightbox-cap span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #A5A15B; font-weight: 400; }
+  .lightbox-close { position: absolute; top: 16px; right: 20px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3);
+    background: transparent; color: #fff; font-size: 1.3rem; cursor: pointer; }
   .proj-photo:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(52,49,47,0.18); }
 
   /* CONTACT CTA */
@@ -481,6 +490,21 @@
   gallerySections.forEach(sec => observer.observe(sec));
 
   // Build project card grids
+  // Lightbox — tap a project photo to see it full size
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close">&times;</button><img alt=""><div class="lightbox-cap"></div>';
+  document.body.appendChild(lightbox);
+  function openLightbox(ph) {
+    lightbox.querySelector('img').src = ph.src;
+    lightbox.querySelector('img').alt = ph.title;
+    lightbox.querySelector('.lightbox-cap').innerHTML = `<span>${ph.tag}</span>${ph.title}`;
+    lightbox.classList.add('open');
+  }
+  const closeLightbox = () => lightbox.classList.remove('open');
+  lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target.classList.contains('lightbox-close')) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
   const categories = [
     { id: 'residential', photos: [
       { src: 'https://res.cloudinary.com/u3hhrbtz/image/upload/v1792935842/Modern_Peach_Villa_with_Warm_Lighting.png', title: 'Annanur', tag: 'Residential Building' },
@@ -510,8 +534,9 @@
       card.className = 'proj-card';
       card.setAttribute('data-aos', 'fade-up');
       card.setAttribute('data-aos-delay', String((i % 4) * 60));
-      card.innerHTML = `<div class="proj-photo" style="background-image:url('${ph.src}')" role="img" aria-label="${ph.title} — ${ph.tag}"></div>
+      card.innerHTML = `<button type="button" class="proj-photo" aria-label="View full photo: ${ph.title}"><img src="${ph.src}" alt="${ph.title} — ${ph.tag}" loading="lazy"></button>
         <div class="proj-caption"><span class="proj-tag">${ph.tag}</span><strong>${ph.title}</strong></div>`;
+      card.querySelector('.proj-photo').addEventListener('click', () => openLightbox(ph));
       grid.appendChild(card);
     });
   });
