@@ -1,0 +1,6 @@
+# robots.txt for https://challengefutureenterprises.in
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://challengefutureenterprises.in/sitemap.xml

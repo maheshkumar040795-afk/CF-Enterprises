@@ -1,0 +1,15 @@
+{
+  "name": "Challenge Future Enterprises",
+  "short_name": "Challenge Future",
+  "description": "Builders in Chennai & Tamil Nadu — construction, architecture and interiors.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E76F51",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
