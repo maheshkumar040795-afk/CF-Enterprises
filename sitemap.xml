@@ -2,29 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://challengefutureenterprises.in/</loc>
+    <loc>https://challengefutureenterprises.com/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://challengefutureenterprises.in/assets/logo.png</image:loc>
+      <image:loc>https://challengefutureenterprises.com/assets/logo.png</image:loc>
       <image:title>Challenge Future Enterprises — Chennai &amp; Tamil Nadu Builders</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://challengefutureenterprises.in/packages.html</loc>
+    <loc>https://challengefutureenterprises.com/packages.html</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://challengefutureenterprises.in/calculator.html</loc>
+    <loc>https://challengefutureenterprises.com/calculator.html</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://challengefutureenterprises.in/projects.html</loc>
+    <loc>https://challengefutureenterprises.com/projects.html</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
