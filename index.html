@@ -52,7 +52,7 @@
     "telephone": ["+91 81908 70673", "+91 95669 58689"],
     "email": "challengefutureenterprises@gmail.com",
     "hasMap": "https://maps.app.goo.gl/Ae5GPFYDPdFMSE5u8",
-    "priceRange": "₹1999 - ₹2599 per sq.ft",
+    "priceRange": "₹2200 - ₹2600 per sq.ft",
     "founder": {
       "@type": "Person",
       "name": "R. Nirmal, M.E."
@@ -1170,15 +1170,16 @@
   .package-card.featured::before { transform: scaleX(1); }
   .package-badge {
     position: absolute;
-    top: 18px; right: -34px;
+    top: 18px; right: 18px;
     background: var(--orange);
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    color: #1E1C1B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 5px 38px;
-    transform: rotate(35deg);
+    padding: 6px 12px;
+    border-radius: 999px;
   }
   .package-tier {
     font-family: 'JetBrains Mono', monospace;
@@ -1511,7 +1512,7 @@
           <span class="btn-package-icon"><i class="fas fa-tags"></i></span>
           <span class="btn-package-copy">
             <span class="btn-package-label">Our Packages <span class="btn-package-badge">3 PLANS</span></span>
-            <span class="btn-package-rotator" id="packageRotator">Basic Package &mdash; &#8377;1,999/sq.ft</span>
+            <span class="btn-package-rotator" id="packageRotator">Basic Package &mdash; &#8377;2,200/sq.ft</span>
           </span>
         </a>
         <a href="calculator.html" class="btn-calculator">
@@ -1749,35 +1750,35 @@
   <div class="packages-grid" data-aos="fade-up">
     <a href="packages.html#basic" class="package-card">
       <div class="package-tier">Basic</div>
-      <div class="package-price">&#8377;1,999<span>/sq.ft</span></div>
-      <p class="package-desc">A solid, no-surprises build with quality materials and dependable execution.</p>
+      <div class="package-price">&#8377;2,200<span>/sq.ft</span></div>
+      <p class="package-desc">A strong M20 structure with dependable branded materials &mdash; ideal for budget homes.</p>
       <ul class="package-points">
-        <li><i class="fas fa-check"></i> Standard structural design</li>
-        <li><i class="fas fa-check"></i> Branded core materials</li>
-        <li><i class="fas fa-check"></i> Basic electrical &amp; plumbing fit-out</li>
+        <li><i class="fas fa-check"></i> JR TMT / Vicky TMT steel</li>
+        <li><i class="fas fa-check"></i> Dalmia / Ramco / Maha cement</li>
+        <li><i class="fas fa-check"></i> Aluminium windows, Tractor Emulsion paint</li>
       </ul>
       <span class="package-cta">View Details <i class="fas fa-arrow-right"></i></span>
     </a>
     <a href="packages.html#standard" class="package-card featured">
-      <div class="package-badge">Popular</div>
+      <div class="package-badge">Most Preferred</div>
       <div class="package-tier">Standard</div>
-      <div class="package-price">&#8377;2,199<span>/sq.ft</span></div>
-      <p class="package-desc">Our most-chosen package — upgraded finishes with better design flexibility.</p>
+      <div class="package-price">&#8377;2,400<span>/sq.ft</span></div>
+      <p class="package-desc">Our most preferred package &mdash; upgraded doors, windows, fittings and finishes.</p>
       <ul class="package-points">
-        <li><i class="fas fa-check"></i> Custom architectural design</li>
-        <li><i class="fas fa-check"></i> Premium branded materials</li>
-        <li><i class="fas fa-check"></i> Modular kitchen &amp; wardrobe provision</li>
+        <li><i class="fas fa-check"></i> ARS / Amman / Agni steel, Chamber brick</li>
+        <li><i class="fas fa-check"></i> Teak finish main door, UPVC windows</li>
+        <li><i class="fas fa-check"></i> SS handrail &amp; MEP coordination</li>
       </ul>
       <span class="package-cta">View Details <i class="fas fa-arrow-right"></i></span>
     </a>
     <a href="packages.html#premium" class="package-card">
       <div class="package-tier">Premium</div>
-      <div class="package-price">&#8377;2,599<span>/sq.ft</span></div>
-      <p class="package-desc">Elevated design and top-tier finishes for a truly premium build.</p>
+      <div class="package-price">&#8377;2,600<span>/sq.ft</span></div>
+      <p class="package-desc">Luxury finish homes with designer elevation and top-tier fittings.</p>
       <ul class="package-points">
-        <li><i class="fas fa-check"></i> Bespoke design &amp; 3D visualisation</li>
-        <li><i class="fas fa-check"></i> Top-tier fittings &amp; finishes</li>
-        <li><i class="fas fa-check"></i> Full interior &amp; landscaping package</li>
+        <li><i class="fas fa-check"></i> JSW / TATA / iSteel steel, Wire cut brick</li>
+        <li><i class="fas fa-check"></i> 1st quality teak door, premium UPVC + toughened glass</li>
+        <li><i class="fas fa-check"></i> Asian Paints Royale &amp; designer elevation</li>
       </ul>
       <span class="package-cta">View Details <i class="fas fa-arrow-right"></i></span>
     </a>
@@ -2105,9 +2106,9 @@
   const packageRotator = document.getElementById('packageRotator');
   if (packageRotator) {
     const packageOptions = [
-      'Basic Package &mdash; &#8377;1,999/sq.ft',
-      'Standard Package &mdash; &#8377;2,199/sq.ft',
-      'Premium Package &mdash; &#8377;2,599/sq.ft'
+      'Basic Package &mdash; &#8377;2,200/sq.ft',
+      'Standard Package &mdash; &#8377;2,400/sq.ft',
+      'Premium Package &mdash; &#8377;2,600/sq.ft'
     ];
     let packageIndex = 0;
     setInterval(() => {
